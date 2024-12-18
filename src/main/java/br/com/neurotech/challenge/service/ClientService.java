@@ -1,10 +1,12 @@
 package br.com.neurotech.challenge.service;
 
-import org.springframework.stereotype.Service;
-
+import br.com.neurotech.challenge.entity.Credit;
 import br.com.neurotech.challenge.entity.NeurotechClient;
+import br.com.neurotech.challenge.entity.VehicleModel;
 
-@Service
+import java.util.List;
+
+
 public interface ClientService {
 	
 	/**
@@ -19,4 +21,9 @@ public interface ClientService {
 	 */
 	NeurotechClient get(String id);
 
+	List<NeurotechClient> getAll();
+
+	void delete(String id);
+
+	List<NeurotechClient> getEligibleClients(VehicleModel vehicleModel, Integer minAge, Integer maxAge, Credit.CreditType creditType);
 }
