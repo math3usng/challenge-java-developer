@@ -1,3 +1,3 @@
 package br.com.neurotech.challenge.dto;
 
-public record Error(String message) {}
+public record ErrorDTO(String message) {}
