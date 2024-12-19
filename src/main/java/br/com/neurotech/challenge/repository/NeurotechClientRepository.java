@@ -11,9 +11,22 @@ import java.util.List;
 
 
 @Repository
+/**
+ * Repositório responsável por gerenciar interações com a entidade NeurotechClient no banco de dados.
+ */
 public interface NeurotechClientRepository extends JpaRepository<NeurotechClient, String> {
 
 
+    /**
+     * Busca clientes elegíveis com base em intervalos de renda, idade e tipo de crédito.
+     *
+     * @param minIncome Renda mínima para a busca.
+     * @param maxIncome Renda máxima para a busca.
+     * @param minAge Idade mínima para a busca.
+     * @param maxAge Idade máxima para a busca.
+     * @param creditType Tipo de crédito associado.
+     * @return Lista de clientes elegíveis que atendem aos critérios especificados.
+     */
     @Query("SELECT c FROM NeurotechClient c " +
             "JOIN c.credits credit " +
             "WHERE c.income BETWEEN :minIncome AND :maxIncome " +

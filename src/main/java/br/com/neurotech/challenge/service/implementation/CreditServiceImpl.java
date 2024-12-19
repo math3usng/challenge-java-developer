@@ -12,10 +12,6 @@ import java.util.logging.Logger;
 @Service
 public class CreditServiceImpl implements CreditService {
 
-    public final static Double FIXED_INTEREST_RATE = 5.0;
-    public final static Double VARIABLE_INTEREST_RATE = 7.5;
-    public final static Double PAYROLL_RATE = 4.0;
-
     private final NeurotechClientRepository neurotechClientRepository;
 
     public CreditServiceImpl(NeurotechClientRepository repository) {
@@ -54,13 +50,13 @@ public class CreditServiceImpl implements CreditService {
 
         switch (creditType) {
             case FIXED_INTEREST:
-                credit.setInterestRate(FIXED_INTEREST_RATE);
+                credit.setInterestRate(Credit.FIXED_INTEREST_RATE);
                 break;
             case VARIABLE_INTEREST:
-                credit.setInterestRate(VARIABLE_INTEREST_RATE);
+                credit.setInterestRate(Credit.VARIABLE_INTEREST_RATE);
                 break;
             case PAYROLL:
-                credit.setInterestRate(PAYROLL_RATE);
+                credit.setInterestRate(Credit.PAYROLL_RATE);
                 break;
         }
 

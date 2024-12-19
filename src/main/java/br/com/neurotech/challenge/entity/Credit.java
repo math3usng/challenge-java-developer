@@ -19,6 +19,11 @@ public class Credit {
     public static final double HATCH_INCOME_MAX = 15000.0;
     public static final double SUV_INCOME_MIN = 8000.0;
     public static final int    SUV_AGE_MIN = 20;
+
+    public final static Double FIXED_INTEREST_RATE = 5.0;
+    public final static Double VARIABLE_INTEREST_RATE = 7.5;
+    public final static Double PAYROLL_RATE = 4.0;
+
     /**
      * Identificador do empréstimo
      */
